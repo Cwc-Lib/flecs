@@ -10,3 +10,7 @@ bazel-flecs
 bazel-genfiles
 bazel-out
 bazel-testlogs
+
+_out/
+obj/
+.wdat/

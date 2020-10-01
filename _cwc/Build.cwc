@@ -1,0 +1,43 @@
+>
+;Choose your example:
+>
+;-{sExample}=01_helloworld
+;-{sExample}:=02_simple_system
+;-{sExample}:=03_move_system
+;-{sExample}:=04_simple_module
+;-{sExample}:=05_add_remove_system
+;-{sExample}:=06_set_system
+-{sExample}:=08_hierarchy
+>
+-{pObj}:=obj/cpp_{_sPlatform}_{_sOpt}/
+>
+-{pOut}:=_out/cpp_{_sPlatform}_{_sOpt}/
+>
+-{vFlag}=
+-DUNICODE
+>
+-{pFlecs}=../
+-{pCppExample}={pFlecs}examples/cpp/
+>
+-{vIncl}=
+-I {pFlecs}include/
+>
+;Build flecs
+-c {pFlecs}flecs.c -o {pObj}flecs.o
+-{vIncl}
+-{vFlag}
+>
+;Build example
+-c {pCppExample}{sExample}/ -o {pObj}example/
+-I {pCppExample}{sExample}/include/
+-{vIncl}
+-{vFlag}
+>
+;Generate executable
+-o {pObj} -#To {pOut}/App.*
+-L {pExtLib}
+-lgdi32 -lopengl32
+-lws2_32
+-lwinmm
+>
+-#Run

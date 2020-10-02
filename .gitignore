@@ -11,6 +11,7 @@ bazel-genfiles
 bazel-out
 bazel-testlogs
 
+.vs/
 _out/
 obj/
 .wdat/

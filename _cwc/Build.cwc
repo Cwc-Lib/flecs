@@ -9,15 +9,18 @@
 ;-{sExample}:=06_set_system
 -{sExample}:=08_hierarchy
 >
--{pObj}:=obj/cpp_{_sPlatform}_{_sOpt}/
+-{sLang}=c
+;-{sLang}=cpp
 >
--{pOut}:=_out/cpp_{_sPlatform}_{_sOpt}/
+-{pObj}:=obj/{sLang}_{_sPlatform}_{_sOpt}/
+>
+-{pOut}:=_out/{sLang}_{_sPlatform}_{_sOpt}/
 >
 -{vFlag}=
 -DUNICODE
 >
 -{pFlecs}=../
--{pCppExample}={pFlecs}examples/cpp/
+-{pCppExample}={pFlecs}examples/{sLang}/
 >
 -{vIncl}=
 -I {pFlecs}include/
@@ -29,6 +32,7 @@
 >
 ;Build example
 -c {pCppExample}{sExample}/ -o {pObj}example/
+-I {pCppExample}{sExample}/
 -I {pCppExample}{sExample}/include/
 -{vIncl}
 -{vFlag}

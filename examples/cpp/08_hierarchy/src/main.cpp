@@ -17,7 +17,7 @@ struct Velocity {
 };
 
 /* Implement a simple move system */
-void Move(flecs::entity e, Position& p, const Velocity& v) {
+void Move(flecs::entity e,  const Velocity& v, Position& p) {
     p.x += v.x;
     p.y += v.y;
 
